@@ -143,6 +143,7 @@ console.log(isNotZero(5));
 /**
  * Q10.Calculate the remainder Given two numbers, return their remainder when divided 
  * by each other. 
+ * REMAINDER is the rest after a division. EX : 4/3 = 1. 1 is the rest.
  * calcRemainder(4, 2) → 0 
  * calcRemainder(7, 8)→ 7 
  * calcRemainder(9,8)→ 1
@@ -152,3 +153,59 @@ function calcRemainder(num1, num2) {
     return num1 % num2
 }
 console.log(calcRemainder(9, 8))
+
+/**
+ * Q11. Is the number odd? Given two numbers, return true if the number is odd 
+ * odd = impair
+ * isOdd(1) → true 
+ * isOdd(2)→ false 
+ * isOdd(3)→ – true
+ */
+
+function isOdd(num1, num2) {
+    return num1 % num2 === 1;
+    // David's way : return number % 2 !== 0
+}
+console.log(isOdd(2, 1))
+
+/**
+ * Q12. If a number is even, return 1 otherwise return -1 Create a function that takes a number 
+ * argument and returns 1 if the number is even. If the number is odd return −1.
+ * Even = pair 
+ * booleanInteger(1) → −1 
+ * booleanInteger(2) → 1 
+ * booleanInteger(5) → −1
+ */
+
+function booleanInteger(number) {
+    return number % 2 === 0 ? 1 : -1;
+}
+console.log(booleanInteger(6))
+
+/**
+ * Q13.Check if a user is logged in AND subscribed Create a function that takes in two strings. 
+ * If the first string is equal to 'LOGGED_IN'AND the second string is equal to 
+ * 'SUBSCRIBED' return true, otherwise return false. 
+ * isLoggedInAndSubscribed('LOGGED_IN', 'SUBSCRIBED) → true 
+ * isLoggedInAndSubscribed('LOGGED_IN', 'UNSUBSCRIBED') → false 
+ * isLoggedInAndSubscribed('LOGGED_OUT', 'SUBSCRIBED') → false
+ */
+
+function isLoggedInAndSubscribed(log, sub) {
+    return log ==='logged in' && sub === 'subscribed' ? true : false;
+}
+console.log(isLoggedInAndSubscribed('logged in', 'subscribed'))
+
+/**
+ * Q14. Check if a user is logged in OR subscribed Create a function that takes in two strings. 
+ * If the first string is equal to 'LOGGED_IN'OR the second string is equal to 'SUBSCRIBED' 
+ * return true,otherwise return false. 
+ * isLoggedInAndSubscribed('LOGGED_IN', 'SUBSCRIBED) → true 
+ * isLoggedInAndSubscribed('LOGGED_IN', 'UNSUBSCRIBED') → false // A mistake from David maybe ?
+ * isLoggedInAndSubscribed('LOGGED_OUT', 'SUBSCRIBED') → false
+ */
+
+ function isLoggedInAndSubscribed(log, sub) {
+    return log === 'logged in' || sub === 'subscribed' ? true : false;
+}
+console.log(isLoggedInAndSubscribed('logged in', 'subscribed'))
