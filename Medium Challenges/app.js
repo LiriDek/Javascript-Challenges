@@ -134,3 +134,122 @@ function reverseString(string) {
     return reversedString;
 }
 console.log(reverseString('abc'));
+// Other way to do it
+// 'abc'.split('') - converts string to array so it's equal to : ['a', 'b', 'c']
+// 'abc'.split('').reverse() - reverse the elements on the array : ['c', 'b', 'a']
+// 'abc'.split('').reverse().join('') - Puts the reversed elements of the array back to string = 'cba'
+// So in the fuction we don't need to loop it. just - return str.split(''). reverse().join('' );
+
+
+/**
+ * Q9. Turn every element in an array into 0 Given an array of elements, return the same length 
+ * array filled with O's. 
+ * convertToZeros([5, 100, 0]) → [0, 0, 0] 
+ * convertToZeros([12]) → [0] 
+ * convertToZeros([1, 2, 3, 4, 5]) → [0, 0, 0, 0, 0] 
+ * 
+ * Solution 1: For loop 
+ * Solution 2:Array'fill' 
+ * Solution 3:Array 'map'
+ */
+
+// .push() solution
+function convertToZeros(arr) {
+    let zeroTab = []
+    for (let i = 0; i < arr.length; i++) {
+        zeroTab.push(arr[i] * 0)
+    }
+    return zeroTab
+}
+console.log(convertToZeros([5, 100, 0]))
+
+// loop solution is inside of the for loop to wirte this :
+// zeroTab[i] = 0
+// and return zeroTab
+
+let array = [5, 25, 35]
+let zeroArray = array.map ((element) => {
+    return element * 0;
+})
+console.log(zeroArray)
+
+// OR
+
+function convertToZeros(arr) { 
+    return arr.map(elem => 0); 
+} 
+console.log(convertToZeros([1, 2, 3, 4, 5]));
+
+// .fill() solution
+// Don't need a for loop. just write this inside of the function :
+// return new Array(arr.length).fill(0);
+// Basically it will fill the array with zeros depending on arrays length
+
+/**
+ * Q10.Filter out all the apples Given an array of fruits, if it is an apple remove it 
+ * from the array. 
+ * removeApples(['Banana', 'Apple', 'Orange', 'Apple']) → ['Banana, 'Orange'] 
+ * removeApples(['Tomato', 'Orange', 'Banana']) → ['Tomato', 'Orange', 'Banana'] 
+ * removeApples(['Banana', 'Orange', 'Apple']) → ['Banana, 'Orange'] 
+ * 
+ * Solution 1: For loop 
+ * Solution 2:Array 'filter'
+ */
+
+function removeApples(arr) {
+    let arrElem = []
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== 'Apple') {
+            arrElem.push(arr[i])
+        }
+    }
+    return arrElem
+}
+console.log(removeApples(['Banana', 'Apple', 'Orange', 'Apple']));
+
+// .filter() method
+
+function removeApples(arr) { 
+    return arr.filter(elem => elem !== 'Apple'); 
+} 
+console.log(removeApples(['Banana', 'Apple', 'Orange', 'Apple']));
+
+/**
+ * Q11. Filter out all the falsy values Given an array of values, filter out all the falsy values 
+ * and only return the truthy values. 
+ * filterOutFalsy(["", [ ], 0, null, undefined, "0" ]) → [ [], "0"] 
+ * filterOutFalsy(['Tomato', 'Orange', 'Banana', false]) → ['Tomato', 'Orange', 'Banana'] 
+ * filterOutFalsy(['Banana', 'Orange', 'Apple']) → ['Banana, 'Orange'] 
+ * 
+ * Solution 1: For loop 
+ * Solution 2:Array 'filter'
+ */
+
+ function filterOutFalsy(arr) {
+    let truthy = []
+    for (let i = 0; i < arr.length; i++) {
+        if (!!arr[i]) {
+            truthy.push(arr[i])
+        }
+    }
+    return truthy
+}
+console.log(filterOutFalsy(["", [], 0, null, undefined, "0"]));
+
+// .filter() method
+
+function filterFalsy(arr) { 
+    return arr.filter(elem => !!elem); 
+} 
+console.log(filterFalsy(["", [], 0, null, undefined, "0"]));
+
+/**
+ * Q12.Truthy to true, Falsy to false Given an array of truthy and falsy values, return the same 
+ * array of elements into its boolean value. 
+ * convertToBoolean([500, 0, "David", "", []]) → [true, false, true, false, true]
+ */
+
+function convertToBoolean(arr) {
+    return arr.map(elem => !!elem)
+}
+console.log(convertToBoolean([500, 0, "David", "", []]))
