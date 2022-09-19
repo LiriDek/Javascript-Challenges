@@ -80,11 +80,11 @@ console.log(progressiveSum(6))
  * calcTime(300)→ '05:00'
  */
 
-function calcTime(time) {
+function calcTime(seconds) {
     // Math.floor pour arrondir
-    let timerMinutes = Math.floor(time / 60);
+    let timerMinutes = Math.floor(seconds / 60);
     // time in seconds % 60 give us the rest in seconds
-    let timerSeconds = time % 60;
+    let timerSeconds = seconds % 60;
 
     // The code means, if the minutes length is = to 1 then add a 0 before
     // Had to convert it into a string in order to measure the length because
@@ -105,5 +105,32 @@ console.log(calcTime(70))
  */
 
 function getMax(arr) {
-    
+    let max = arr[0]
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    return max;
 }
+console.log(getMax([5, 100, 0]));
+
+/**
+ * Q8. Reverse a string Given a string, return the reversed string 
+ * reverseString('abc')→ 'cba' 
+ * reverseString('David') → 'divaD' 
+ * reverseString('This is cool') → 'looc si siht' 
+ * - Use an incrementing for loop -Use a decrementing for loop 
+ * -Use the array reverse property 25:25
+ */
+
+function reverseString(string) {
+    let reversedString = '';
+    // Decrementing loop
+    // for (let i = string.length; i >= 0; i--) {
+    for (let i = 0; i < string.length; i++) {
+        reversedString = string[i] + reversedString;
+    }
+    return reversedString;
+}
+console.log(reverseString('abc'));
