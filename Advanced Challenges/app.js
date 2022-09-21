@@ -22,3 +22,49 @@ function showRating(rating) {
     return star;
 }
 console.log(showRating(3.5))
+
+/**
+ * Q2. Sort by lowest to highest price S Given an array of numbers, return the prices sorted by 
+ * low to high. 
+ * sortLowToHigh([20, 40, 10, 30, 50, 10]) → [10, 10, 20, 30, 40, 50] 
+ * sortLowToHigh([5, 10, 0, −5]) → [-−5, 0, 5, 10] 
+ * sortLowToHigh([3, 2, 1, 0]) → [0, 1, 2, 3]
+ */
+
+// .sort() methos is to sort the elements on an array
+// .sort((a, n) a - b) is to sort numbers on an array from the lowest to the highest
+// .sort((a, n) b - a) it sorts from the highest to the lowest
+// .sort((a, n) a - blur) is to reset the sorting on its initial position ?
+function sortLowToHigh(numbers) {
+    return numbers.sort((a, b) => a - b)
+}
+console.log(sortLowToHigh([20, 40, 10, 30, 50, 10]))
+
+/**
+ * Q3.Sort by highest to lowest price Given an array of objects, return the prices sorted by 
+ * high to low. 
+ * sortHighToLow([ 
+ * {id: 1, price: 50 }, 
+ * {id:2, price: 30 }, 
+ * {id: 3,price: 60 }, 
+ * {id: 4,price:10 },
+ * ])
+ * → [{ id: 1, price: 50 }, 
+ * {id:2,price: 30}, 
+ * { id: 3, price: 60 }, 
+ * {id:4, price: 10 }]
+ */
+
+ function sortHighToLow(numbers) {
+    return numbers.sort((a, b) => {
+        // Price which is the element inside of the object i want to sort
+        return b.price - a.price
+    });
+}
+console.log(
+    sortHighToLow([ 
+    {id: 1, price: 50 }, 
+    {id: 2, price: 30 }, 
+    {id: 3, price: 60 }, 
+    {id: 4, price: 10 },
+    ]))
