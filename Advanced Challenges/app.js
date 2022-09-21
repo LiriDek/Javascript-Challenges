@@ -68,3 +68,21 @@ console.log(
     {id: 3, price: 60 }, 
     {id: 4, price: 10 },
     ]))
+
+/**
+ * Q4. Promises On Youtube,watch: "The Async Await Episode I Promised" 
+ * -Fireship "Async Await JavaScript ES7" Techsith (1.5x Speed) "Async JS Crash Course 
+ * - Callbacks, Promises, Async Await" 
+ * -Travsery Media (1.5x Speed)
+ */
+/**
+ * UPDATE
+ * Resources mentioned in the video no longer necessary - 
+ * the PROMISES course covers everything
+ */
+
+/**
+ * Q5. Find all the posts by a single user Call this 
+ * API"https://jsonplaceholder.typicode.com/posts" and return all the posts by any given user ld.
+ * postsByUser(4)→
+ */
