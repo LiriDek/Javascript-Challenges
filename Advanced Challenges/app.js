@@ -86,3 +86,5 @@ console.log(
  * API"https://jsonplaceholder.typicode.com/posts" and return all the posts by any given user ld.
  * postsByUser(4)→
  */
+
+/**for friday */
