@@ -87,4 +87,6 @@ console.log(
  * postsByUser(4)→
  */
 
-/**for friday */
+/**for friday
+ * FOR SATURDAY
+ */
