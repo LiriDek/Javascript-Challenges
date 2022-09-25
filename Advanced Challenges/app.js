@@ -87,6 +87,28 @@ console.log(
  * postsByUser(4)→
  */
 
-/**for friday
- * FOR SATURDAY
+async function postByUser(userId) {
+    const promise = await fetch("https://jsonplaceholder.typicode.com/posts");
+    // When i fetch i need to convert the data on something javascript understands that's why we use .json()
+    const result = await promise.json();
+    const posts = result.filter(element => element.userId === userId);
+    console.log(posts)
+}
+console.log(postByUser(4))
+
+
+/**
+ * Q6. First 6 Incomplete Todos Call this 
+ * API"https://jsonplaceholder.typicode.com/todos" 
+ * and return the first 6 incomplete todo's from the result.
+ * firstSixIncomplete()
  */
+
+async function firstSixIncomplet() {
+    const promiseNew = await fetch("https://jsonplaceholder.typicode.com/todos");
+    const resultNew = await promiseNew.json();
+    // .slice() method is to show the sixfirst results
+    const completedFalse = resultNew.filter(element => !element.completed).slice(0, 6);
+    console.log(completedFalse)
+}
+console.log(firstSixIncomplet())
